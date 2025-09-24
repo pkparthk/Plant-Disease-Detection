@@ -1,0 +1,363 @@
+{
+  "model": {
+    "name": "Plant Disease Detection Model V2",
+    "version": "2.0.0",
+    "description": "Advanced EfficientNetV2-based plant disease detection",
+    "framework": "tensorflow",
+    "input_shape": [224, 224, 3],
+    "supported_formats": ["jpeg", "jpg", "png", "bmp"]
+  },
+  "classes": [
+    {
+      "id": "Pepper__bell___Bacterial_spot",
+      "name": "Bell  Bacterial",
+      "plant": "Pepper",
+      "disease": "Bell  Bacterial",
+      "severity": "moderate",
+      "symptoms": [
+        "Disease symptoms on pepper",
+        "Reduced plant vigor",
+        "Potential yield loss"
+      ],
+      "causes": "Plant pathogen affecting pepper",
+      "treatment": {
+        "chemical": "Consult local extension for appropriate treatment",
+        "cultural": "Remove infected material, improve growing conditions",
+        "preventive": "Use healthy planting material, practice good sanitation"
+      },
+      "urgency": "Medium - treat within 1-2 weeks",
+      "economic_impact": "Can reduce yield by 10-30% if left untreated"
+    },
+    {
+      "id": "Pepper__bell___healthy",
+      "name": "Healthy",
+      "plant": "Pepper",
+      "disease": "Healthy",
+      "severity": "none",
+      "symptoms": [
+        "Healthy pepper plant",
+        "No visible disease symptoms",
+        "Normal growth pattern"
+      ],
+      "causes": "No disease present",
+      "treatment": {
+        "chemical": "No treatment needed",
+        "cultural": "Continue regular care and monitoring",
+        "preventive": "Maintain good plant hygiene and proper growing conditions"
+      },
+      "urgency": "None - plant is healthy",
+      "economic_impact": "No negative impact"
+    },
+    {
+      "id": "Potato___Early_blight",
+      "name": " Early Blight",
+      "plant": "Potato",
+      "disease": " Early Blight",
+      "severity": "moderate",
+      "symptoms": [
+        "Brown or black lesions on potato leaves",
+        "Lesions may have yellow halos",
+        "Rapid spread in humid conditions",
+        "Premature leaf drop"
+      ],
+      "causes": "Fungal infection affecting potato plants",
+      "treatment": {
+        "chemical": "Apply copper-based fungicides or chlorothalonil",
+        "cultural": "Remove infected plant debris, improve air circulation",
+        "preventive": "Avoid overhead watering, plant resistant varieties"
+      },
+      "urgency": "Medium - treat within 1-2 weeks",
+      "economic_impact": "Can reduce yield by 10-30% if left untreated"
+    },
+    {
+      "id": "Potato___Late_blight",
+      "name": " Late Blight",
+      "plant": "Potato",
+      "disease": " Late Blight",
+      "severity": "moderate",
+      "symptoms": [
+        "Brown or black lesions on potato leaves",
+        "Lesions may have yellow halos",
+        "Rapid spread in humid conditions",
+        "Premature leaf drop"
+      ],
+      "causes": "Fungal infection affecting potato plants",
+      "treatment": {
+        "chemical": "Apply copper-based fungicides or chlorothalonil",
+        "cultural": "Remove infected plant debris, improve air circulation",
+        "preventive": "Avoid overhead watering, plant resistant varieties"
+      },
+      "urgency": "Medium - treat within 1-2 weeks",
+      "economic_impact": "Can reduce yield by 10-30% if left untreated"
+    },
+    {
+      "id": "Potato___healthy",
+      "name": "Healthy",
+      "plant": "Potato",
+      "disease": "Healthy",
+      "severity": "none",
+      "symptoms": [
+        "Healthy potato plant",
+        "No visible disease symptoms",
+        "Normal growth pattern"
+      ],
+      "causes": "No disease present",
+      "treatment": {
+        "chemical": "No treatment needed",
+        "cultural": "Continue regular care and monitoring",
+        "preventive": "Maintain good plant hygiene and proper growing conditions"
+      },
+      "urgency": "None - plant is healthy",
+      "economic_impact": "No negative impact"
+    },
+    {
+      "id": "Tomato_Bacterial_spot",
+      "name": "Bacterial Spot",
+      "plant": "Tomato",
+      "disease": "Bacterial Spot",
+      "severity": "moderate",
+      "symptoms": [
+        "Small spots on tomato leaves or fruit",
+        "Spots may be brown, black, or yellow",
+        "Can cause defoliation if severe"
+      ],
+      "causes": "Bacterial or fungal infection",
+      "treatment": {
+        "chemical": "Apply appropriate bactericide or fungicide",
+        "cultural": "Remove infected material, avoid overhead irrigation",
+        "preventive": "Use pathogen-free seeds, practice crop rotation"
+      },
+      "urgency": "Medium - treat within 1-2 weeks",
+      "economic_impact": "Can reduce yield by 10-30% if left untreated"
+    },
+    {
+      "id": "Tomato_Early_blight",
+      "name": "Early Blight",
+      "plant": "Tomato",
+      "disease": "Early Blight",
+      "severity": "moderate",
+      "symptoms": [
+        "Brown or black lesions on tomato leaves",
+        "Lesions may have yellow halos",
+        "Rapid spread in humid conditions",
+        "Premature leaf drop"
+      ],
+      "causes": "Fungal infection affecting tomato plants",
+      "treatment": {
+        "chemical": "Apply copper-based fungicides or chlorothalonil",
+        "cultural": "Remove infected plant debris, improve air circulation",
+        "preventive": "Avoid overhead watering, plant resistant varieties"
+      },
+      "urgency": "Medium - treat within 1-2 weeks",
+      "economic_impact": "Can reduce yield by 10-30% if left untreated"
+    },
+    {
+      "id": "Tomato_Late_blight",
+      "name": "Late Blight",
+      "plant": "Tomato",
+      "disease": "Late Blight",
+      "severity": "moderate",
+      "symptoms": [
+        "Brown or black lesions on tomato leaves",
+        "Lesions may have yellow halos",
+        "Rapid spread in humid conditions",
+        "Premature leaf drop"
+      ],
+      "causes": "Fungal infection affecting tomato plants",
+      "treatment": {
+        "chemical": "Apply copper-based fungicides or chlorothalonil",
+        "cultural": "Remove infected plant debris, improve air circulation",
+        "preventive": "Avoid overhead watering, plant resistant varieties"
+      },
+      "urgency": "Medium - treat within 1-2 weeks",
+      "economic_impact": "Can reduce yield by 10-30% if left untreated"
+    },
+    {
+      "id": "Tomato_Leaf_Mold",
+      "name": "Leaf Mold",
+      "plant": "Tomato",
+      "disease": "Leaf Mold",
+      "severity": "moderate",
+      "symptoms": [
+        "Disease symptoms on tomato",
+        "Reduced plant vigor",
+        "Potential yield loss"
+      ],
+      "causes": "Plant pathogen affecting tomato",
+      "treatment": {
+        "chemical": "Consult local extension for appropriate treatment",
+        "cultural": "Remove infected material, improve growing conditions",
+        "preventive": "Use healthy planting material, practice good sanitation"
+      },
+      "urgency": "Medium - treat within 1-2 weeks",
+      "economic_impact": "Can reduce yield by 10-30% if left untreated"
+    },
+    {
+      "id": "Tomato_Septoria_leaf_spot",
+      "name": "Septoria Leaf",
+      "plant": "Tomato",
+      "disease": "Septoria Leaf",
+      "severity": "moderate",
+      "symptoms": [
+        "Disease symptoms on tomato",
+        "Reduced plant vigor",
+        "Potential yield loss"
+      ],
+      "causes": "Plant pathogen affecting tomato",
+      "treatment": {
+        "chemical": "Consult local extension for appropriate treatment",
+        "cultural": "Remove infected material, improve growing conditions",
+        "preventive": "Use healthy planting material, practice good sanitation"
+      },
+      "urgency": "Medium - treat within 1-2 weeks",
+      "economic_impact": "Can reduce yield by 10-30% if left untreated"
+    },
+    {
+      "id": "Tomato_Spider_mites_Two_spotted_spider_mite",
+      "name": "Spider Mites Two Spotted Spider Mite",
+      "plant": "Tomato",
+      "disease": "Spider Mites Two Spotted Spider Mite",
+      "severity": "moderate",
+      "symptoms": [
+        "Small spots on tomato leaves or fruit",
+        "Spots may be brown, black, or yellow",
+        "Can cause defoliation if severe"
+      ],
+      "causes": "Bacterial or fungal infection",
+      "treatment": {
+        "chemical": "Apply appropriate bactericide or fungicide",
+        "cultural": "Remove infected material, avoid overhead irrigation",
+        "preventive": "Use pathogen-free seeds, practice crop rotation"
+      },
+      "urgency": "Medium - treat within 1-2 weeks",
+      "economic_impact": "Can reduce yield by 10-30% if left untreated"
+    },
+    {
+      "id": "Tomato__Target_Spot",
+      "name": "Target Spot",
+      "plant": "Tomato",
+      "disease": "Target Spot",
+      "severity": "moderate",
+      "symptoms": [
+        "Small spots on tomato leaves or fruit",
+        "Spots may be brown, black, or yellow",
+        "Can cause defoliation if severe"
+      ],
+      "causes": "Bacterial or fungal infection",
+      "treatment": {
+        "chemical": "Apply appropriate bactericide or fungicide",
+        "cultural": "Remove infected material, avoid overhead irrigation",
+        "preventive": "Use pathogen-free seeds, practice crop rotation"
+      },
+      "urgency": "Medium - treat within 1-2 weeks",
+      "economic_impact": "Can reduce yield by 10-30% if left untreated"
+    },
+    {
+      "id": "Tomato__Tomato_YellowLeaf__Curl_Virus",
+      "name": "Tomato Yellowleaf Curl Virus",
+      "plant": "Tomato",
+      "disease": "Tomato Yellowleaf Curl Virus",
+      "severity": "moderate",
+      "symptoms": [
+        "Leaf curling or mottling on tomato",
+        "Stunted growth",
+        "Reduced fruit quality"
+      ],
+      "causes": "Viral infection, often spread by insects",
+      "treatment": {
+        "chemical": "No direct chemical treatment for viruses",
+        "cultural": "Remove infected plants, control insect vectors",
+        "preventive": "Use virus-resistant varieties, control aphids and whiteflies"
+      },
+      "urgency": "Medium - treat within 1-2 weeks",
+      "economic_impact": "Can reduce yield by 10-30% if left untreated"
+    },
+    {
+      "id": "Tomato__Tomato_mosaic_virus",
+      "name": "Tomato Mosaic Virus",
+      "plant": "Tomato",
+      "disease": "Tomato Mosaic Virus",
+      "severity": "moderate",
+      "symptoms": [
+        "Leaf curling or mottling on tomato",
+        "Stunted growth",
+        "Reduced fruit quality"
+      ],
+      "causes": "Viral infection, often spread by insects",
+      "treatment": {
+        "chemical": "No direct chemical treatment for viruses",
+        "cultural": "Remove infected plants, control insect vectors",
+        "preventive": "Use virus-resistant varieties, control aphids and whiteflies"
+      },
+      "urgency": "Medium - treat within 1-2 weeks",
+      "economic_impact": "Can reduce yield by 10-30% if left untreated"
+    },
+    {
+      "id": "Tomato_healthy",
+      "name": "Healthy",
+      "plant": "Tomato",
+      "disease": "Healthy",
+      "severity": "none",
+      "symptoms": [
+        "Healthy tomato plant",
+        "No visible disease symptoms",
+        "Normal growth pattern"
+      ],
+      "causes": "No disease present",
+      "treatment": {
+        "chemical": "No treatment needed",
+        "cultural": "Continue regular care and monitoring",
+        "preventive": "Maintain good plant hygiene and proper growing conditions"
+      },
+      "urgency": "None - plant is healthy",
+      "economic_impact": "No negative impact"
+    }
+  ],
+  "severity_levels": {
+    "none": {
+      "level": 0,
+      "color": "#10B981",
+      "description": "No disease detected - plant appears healthy"
+    },
+    "low": {
+      "level": 1,
+      "color": "#F59E0B",
+      "description": "Minor infection - monitor closely"
+    },
+    "moderate": {
+      "level": 2,
+      "color": "#F97316",
+      "description": "Moderate infection - treatment recommended"
+    },
+    "high": {
+      "level": 3,
+      "color": "#DC2626",
+      "description": "Severe infection - immediate treatment required"
+    },
+    "very_high": {
+      "level": 4,
+      "color": "#7C2D12",
+      "description": "Critical infection - aggressive treatment needed"
+    }
+  },
+  "treatment_types": {
+    "chemical": {
+      "name": "Chemical Treatment",
+      "description": "Fungicides, bactericides, and other chemical interventions"
+    },
+    "cultural": {
+      "name": "Cultural Practices",
+      "description": "Management practices and physical interventions"
+    },
+    "preventive": {
+      "name": "Preventive Measures",
+      "description": "Prevention strategies and long-term management"
+    }
+  },
+  "confidence_thresholds": {
+    "high_confidence": 0.7,
+    "medium_confidence": 0.35,
+    "low_confidence": 0.15,
+    "uncertain": 0.05
+  }
+}
