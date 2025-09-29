@@ -54,12 +54,12 @@ class ApiClient {
     const formData = new FormData();
     formData.append("image", file);
 
-    // Force the correct URL
-    const baseUrl = "http://localhost:8000";
+    // Use configured base URL (from constructor / env) and normalize it
+    const baseUrl = (this.baseUrl || API_BASE_URL).replace(/\/$/, "");
     const url = `${baseUrl}/api/predict`;
 
     console.log("Making prediction request to:", url);
-    console.log("Base URL:", baseUrl);
+    console.log("Configured API_BASE_URL:", API_BASE_URL);
     console.log("this.baseUrl:", this.baseUrl);
 
     const response = await fetch(url, {
