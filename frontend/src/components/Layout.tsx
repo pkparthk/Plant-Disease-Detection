@@ -65,7 +65,7 @@ export function Layout({ children }: LayoutProps) {
               <div className="flex items-center space-x-2">
                 <Leaf className="h-5 w-5 text-primary-600" />
                 <span className="text-sm text-gray-600">
-                  Plant Disease Detection System
+                  Made with ❤️ for Plant Disease Detection System By Parth Kothari
                 </span>
               </div>
               <div className="text-sm text-gray-600">
