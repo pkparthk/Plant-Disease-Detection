@@ -24,8 +24,8 @@ class Settings(BaseSettings):
     api_key: Optional[str] = Field(default=None, alias="API_KEY")
     
     # CORS Configuration
-    cors_origins: List[str] = Field(
-        default=["http://localhost:3000", "http://127.0.0.1:3000"],
+    cors_origins: str = Field(
+        default="http://localhost:3000,http://127.0.0.1:3000",
         alias="CORS_ORIGINS"
     )
     
@@ -54,12 +54,7 @@ class Settings(BaseSettings):
     prediction_timeout: int = Field(default=30, alias="PREDICTION_TIMEOUT")  # seconds
     enable_model_validation: bool = Field(default=True, alias="ENABLE_MODEL_VALIDATION")
     
-    @validator('cors_origins', pre=True)
-    def parse_cors_origins(cls, v):
-        if isinstance(v, str):
-            # Handle comma-separated string
-            return [origin.strip() for origin in v.split(',')]
-        return v
+
     
     @validator('log_level')
     def validate_log_level(cls, v):
@@ -82,6 +77,13 @@ class Settings(BaseSettings):
     @property
     def is_development(self) -> bool:
         return self.environment.lower() == "development"
+    
+    @property
+    def cors_origins_list(self) -> List[str]:
+        """Convert CORS origins string to list"""
+        if self.cors_origins.strip() == '*':
+            return ['*']
+        return [origin.strip() for origin in self.cors_origins.split(',')]
     
     class Config:
         env_file = ".env"
