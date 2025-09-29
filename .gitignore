@@ -91,9 +91,6 @@ celerybeat.pid
 .env
 .env.production
 .env.development
-# Allow project-specific env templates
-!frontend/.env.production
-!frontend/.env.development
 .venv
 env/
 venv/
