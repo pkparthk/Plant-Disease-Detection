@@ -3,7 +3,7 @@ services:
     name: plant-disease-api
     env: python
     region: oregon
-    buildCommand: cd backend && pip install -r requirements.txt
+    buildCommand: cd backend && pip install -r requirements-deploy.txt
     startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /health
     envVars:
@@ -15,3 +15,5 @@ services:
         value: info
       - key: MODEL_PATH
         value: models/best_model.h5
+      - key: PYTHON_VERSION
+        value: "3.11.10"
