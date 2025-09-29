@@ -89,6 +89,11 @@ celerybeat.pid
 
 # Environments
 .env
+.env.production
+.env.development
+# Allow project-specific env templates
+!frontend/.env.production
+!frontend/.env.development
 .venv
 env/
 venv/
@@ -180,7 +185,6 @@ kaggle.json
 *.key
 credentials.json
 secrets.json
-.env.local
 .env.example
 .env.*.local
 
