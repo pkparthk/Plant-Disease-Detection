@@ -1,26 +1,19 @@
 {
-  "version": 2,
+  "version": 1,
   "name": "plant-disease-detection-frontend",
   "builds": [
     {
       "src": "frontend/package.json",
-      "use": "@vercel/node",
+      "use": "@vercel/static-build",
       "config": {
-        "buildCommand": "cd frontend && npm run build",
-        "outputDirectory": "frontend/dist"
+        "distDir": "build"
       }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/dist/$1"
     }
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/frontend/dist/index.html"
+      "source": "(.*)",
+      "destination": "/index.html"
     }
   ],
   "env": {
