@@ -14,5 +14,8 @@ tensorflow-cpu==2.15.0
 slowapi==0.1.9
 aiofiles==23.2.1
 
+# System monitoring and performance
+psutil==5.9.6
+
 # Performance optimizations for deployment
 gunicorn==21.2.0
