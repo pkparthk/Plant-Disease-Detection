@@ -1,0 +1,18 @@
+# Core FastAPI dependencies
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# Image processing and ML
+pillow==10.1.0
+numpy==1.26.2
+tensorflow-cpu==2.15.0
+
+# Rate limiting and middleware
+slowapi==0.1.9
+aiofiles==23.2.1
+
+# Performance optimizations for deployment
+gunicorn==21.2.0
