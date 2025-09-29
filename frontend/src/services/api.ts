@@ -5,12 +5,12 @@ import {
   ApiError,
 } from "@/types/api";
 
-const API_BASE_URL = "http://localhost:8000"; // import.meta.env.VITE_API_URL || "http://localhost:8000";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
 // Debug logging
-// console.log("Environment variables:", import.meta.env);
-// console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
-// console.log("API_BASE_URL:", API_BASE_URL);
+console.log("Environment variables:", import.meta.env);
+console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
+console.log("API_BASE_URL:", API_BASE_URL);
 
 class ApiClient {
   private baseUrl: string;
